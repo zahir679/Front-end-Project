@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import Modal from './components/Modal';
 
 function App() {
-  const [modalShown, setModalShown] = useState(null)
+  const [modalShown, setModalShown] = useState(false)
 
   useEffect(() => {
     return () => {
@@ -21,6 +22,9 @@ function App() {
   return (
     <div className="App">
       <p>Modal button</p>
+      <Modal show={modalShown} handleClose={hideModal}>
+          <p>Modal</p>
+        </Modal>
       <button onClick={showModal}>Show</button>
     </div>
   );
