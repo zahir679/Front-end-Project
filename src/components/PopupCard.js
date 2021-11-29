@@ -1,16 +1,18 @@
 import './PopupCard.css'
 
 
-const PopupCard = ({ handleClose, show, children}) => {
+const PopupCard = ({ onClick, show, children}) => {
     const showHideClassName = show ? "popup display-block" : "popup display-none";
 
     return (
-      <div className={showHideClassName}>
+      <div className={showHideClassName} onClick={onClick}>
         <section className="popup-main">
           {children}
-          <button type="button" onClick={handleClose}>
+
+          {/* <button type="button" onClick={handleClose}>
             Close
-          </button>
+          </button> */}
+
         </section>
       </div>
     );

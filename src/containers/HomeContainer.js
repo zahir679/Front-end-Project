@@ -69,7 +69,7 @@ const HomeContainer = () => {
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
 
-            <PopupCard show={popupShown} handleClose={hidePopup}>
+            <PopupCard show={popupShown} onClick={hidePopup}>
                 <p>Modal</p>
             </PopupCard>       
         </>
