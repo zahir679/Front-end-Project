@@ -2,6 +2,8 @@
     background-color: #dfb1d9;
     display: flex;
     margin: 5%;
+    width: 90%;
+    height: 10%;
 }
 
 .list{
@@ -10,8 +12,11 @@
 }
 
 .cuisineImage{
-    height: 5em;
+    display: block;
+    max-width:230px;
+    max-height:95px;
     width: auto;
+    height: auto;
 
 }
 
