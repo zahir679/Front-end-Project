@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
-
-import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
-
 
 function App() {
 

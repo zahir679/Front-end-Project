@@ -1,7 +1,7 @@
 import React from 'react'
 import RestaurantCardList from '../components/RestaurantCardList'
 import { useState, useEffect } from 'react';
-import './containers.css'
+import './Containers.css'
 
 const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
