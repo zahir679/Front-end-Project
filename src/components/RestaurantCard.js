@@ -1,4 +1,5 @@
 import React from 'react'
+import './Components.css'
 
 function RestaurantCard({restaurant, onQuickView}) {
     return(
@@ -12,12 +13,12 @@ function RestaurantCard({restaurant, onQuickView}) {
             <h4>Price</h4>
             <p>{restaurant.price}</p>
             <h4>Vegetarian?</h4>
-            <p>{restaurant.vegetarian}</p>
+            <p>{restaurant.vegetarian ? "Yes" : "No"}</p>
             <h4>Halal?</h4>
-            <p>{restaurant.halal}</p>
-            <h4>Glutenfree?</h4>
-            <p>{restaurant.glutenfree}</p>
-            <h4>averageRating</h4>
+            <p>{restaurant.halal ? "Yes" : "No"}</p>
+            <h4>Gluten free?</h4>
+            <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
+            <h4>Average Rating</h4>
             <p>{restaurant.averageRating}</p>
             <button onClick={() => onQuickView(restaurant.id)}>Show in quick view</button>
             <hr/>

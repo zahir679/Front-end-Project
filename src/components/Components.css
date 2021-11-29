@@ -1,0 +1,10 @@
+.restaurantCard{
+    background-color: blue;
+    display: flex;
+    margin: 5%;
+}
+
+.list{
+    width: 80%;
+    height: 100%;
+}
