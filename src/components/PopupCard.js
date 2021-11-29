@@ -1,4 +1,4 @@
-import './popupCard.css'
+import './PopupCard.css'
 
 
 const PopupCard = ({ handleClose, show, children}) => {

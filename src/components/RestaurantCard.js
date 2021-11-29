@@ -1,9 +1,7 @@
 import React from 'react'
-import './components.css'
+import './Components.css'
 import PopupCard from './PopupCard';
 import {useState, useEffect} from 'react';
-
-
 
 function RestaurantCard({restaurant, onQuickView}) {
 
