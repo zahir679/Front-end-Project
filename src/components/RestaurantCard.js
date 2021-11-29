@@ -21,20 +21,20 @@ function RestaurantCard({ restaurant }) {
         case 'French':imageChoice='https://www.getflavor.com/wp-content/uploads/2019/01/4-Taureaux-Spread.jpg'; break;
     }
 
-    const [modalShown, setModalShown] = useState(false)
+    const [popupShown, setPopupShown] = useState(false)
 
     useEffect(() => {
       return () => {
-        setModalShown(false)
+        setPopupShown(false)
       }
     }, [])
   
-    const showModal = () => {
-      setModalShown(true)
+    const showPopup = () => {
+      setPopupShown(true)
     }
   
-    const hideModal = () => {
-      setModalShown(false)
+    const hidePopup = () => {
+      setPopupShown(false)
     }
     
     return(
@@ -57,10 +57,10 @@ function RestaurantCard({ restaurant }) {
             <h4>Average Rating</h4>
             <p>{restaurant.averageRating}</p>
             {/* <button onClick={() => onQuickView(restaurant.id)}>Review Page</button> */}
-            <PopupCard show={modalShown} handleClose={hideModal}>
+            <PopupCard show={popupShown} handleClose={hidePopup}>
             <p>Modal</p>
             </PopupCard>
-            <button onClick={showModal}>Quick View</button>
+            <button onClick={showPopup}>Quick View</button>
             <hr/>
         </div>
     )
