@@ -1,6 +1,7 @@
 import React from 'react'
 import RestaurantCardList from '../components/RestaurantCardList'
 import { useState, useEffect } from 'react';
+import './containers.css'
 
 const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -40,8 +41,10 @@ const updateRestaurantCompletion = (id) => {
 return(
     <>
         {/* <NewRestaurantForm onRestuarantSubmission={addNewRestaurant}/> */}
-        <hr/>
+        
+        <img class ='heroImage' src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
         <RestaurantCardList restaurants={restaurants} onRestaurantCompletion={updateRestaurantCompletion}/>
+        <hr/>
     </>
 )
 

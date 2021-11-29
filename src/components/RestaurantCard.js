@@ -1,27 +1,43 @@
 import React from 'react'
-import './Components.css'
+import './components.css'
+import PopupCard from './PopupCard';
+import {useState, useEffect} from 'react';
 
 
 
 function RestaurantCard({restaurant, onQuickView}) {
+
     let imageChoice = 'Default'
     switch(restaurant.cuisine){
-    case 'Chicken':imageChoice='Chicken.jpeg'; break;
-    case 'Japanese':imageChoice='https://www.azamara.co.uk/sites/default/files/heros/gettyimages-1066110176.jpg'; break;
-    
-    case 'Korean':imageChoice='https://www.thespruceeats.com/thmb/2sIsaW9T1SzmiMs7uJ0EXn6JDio=/3060x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-korean-bibimbap-recipe-2118765-step-011-acab906539594dc9a668c7fbb753c43d.jpg'; break;
-    case 'American':imageChoice='American'; break;
-    case 'Kebab':imageChoice='Kebab'; break;
-    case 'Mexican':imageChoice='Mexican'; break;
-    case 'Bakery':imageChoice='Bakery'; break;
-    case 'Chinese':imageChoice='Chinese'; break;
-    case 'Indian':imageChoice='Indian'; break;
-    case 'Hamburger':imageChoice='Hamburger'; break;
-    case 'Italian':imageChoice='Italian'; break;
-    case 'French':imageChoice='French'; break;
+        case 'Chicken':imageChoice='Chicken.jpeg'; break;
+        case 'Japanese':imageChoice='https://www.azamara.co.uk/sites/default/files/heros/gettyimages-1066110176.jpg'; break;
+        case 'Korean':imageChoice='https://www.thespruceeats.com/thmb/2sIsaW9T1SzmiMs7uJ0EXn6JDio=/3060x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-korean-bibimbap-recipe-2118765-step-011-acab906539594dc9a668c7fbb753c43d.jpg'; break;
+        case 'American':imageChoice='American'; break;
+        case 'Kebab':imageChoice='Kebab'; break;
+        case 'Mexican':imageChoice='Mexican'; break;
+        case 'Bakery':imageChoice='Bakery'; break;
+        case 'Chinese':imageChoice='Chinese'; break;
+        case 'Indian':imageChoice='Indian'; break;
+        case 'Hamburger':imageChoice='Hamburger'; break;
+        case 'Italian':imageChoice='Italian'; break;
+        case 'French':imageChoice='French'; break;
+    }
 
+    const [modalShown, setModalShown] = useState(false)
 
-}
+    useEffect(() => {
+      return () => {
+        setModalShown(false)
+      }
+    }, [])
+  
+    const showModal = () => {
+      setModalShown(true)
+    }
+  
+    const hideModal = () => {
+      setModalShown(false)
+    }
     
     return(
         <div className="restaurantCard">
@@ -42,7 +58,11 @@ function RestaurantCard({restaurant, onQuickView}) {
             <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
             <h4>Average Rating</h4>
             <p>{restaurant.averageRating}</p>
-            <button onClick={() => onQuickView(restaurant.id)}>Show in quick view</button>
+            {/* <button onClick={() => onQuickView(restaurant.id)}>Review Page</button> */}
+            <PopupCard show={modalShown} handleClose={hideModal}>
+            <p>Modal</p>
+            </PopupCard>
+            <button onClick={showModal}>Quick View</button>
             <hr/>
         </div>
     )
