@@ -3,7 +3,7 @@ import './Components.css'
 import PopupCard from './PopupCard';
 import {useState, useEffect} from 'react';
 
-function RestaurantCard({restaurant, onQuickView}) {
+function RestaurantCard({ restaurant }) {
 
     let imageChoice = 'Default'
     switch(restaurant.cuisine){
