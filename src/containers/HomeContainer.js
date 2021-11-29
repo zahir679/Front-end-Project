@@ -65,7 +65,7 @@ const HomeContainer = () => {
             
             <img class ='heroImage' src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
             
-            <RestaurantCardList restaurants={restaurants} onClick={popupShown ? hidePopup : showPopup}
+            <RestaurantCardList restaurants={restaurants} onClick={showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
 
