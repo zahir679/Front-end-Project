@@ -1,0 +1,65 @@
+.restaurantCard{
+    background-color: #dfb1d9;
+    display: flex;
+    margin: 5%;
+    width: 90%;
+    height: 10%;
+}
+
+.list{
+    width: 80%;
+    height: 100%;
+}
+
+.cuisineImage{
+    display: block;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+
+}
+
+.navBar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.navBar .logo{
+    height: 20px;
+    width: auto;
+}
+
+.navBar {
+    z-index: 3;
+    align-items:center;
+    overflow: hidden;
+    padding: 0.1%;
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    padding: 0.1%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+  }
+  
+  .navBar .logo{object-fit: contain;
+    width: 5%;
+  }
+  
+  .navBar a{
+    
+    height: 40px;
+    color: black;
+    padding: 0.5%;
+    align-content: center;
+  }
+  
+  .navBar a:hover {
+    transform: scale(1.5);
+    transition-delay: 0.1s ease-in;
+    background-color: #dfb1d9;
+  }
