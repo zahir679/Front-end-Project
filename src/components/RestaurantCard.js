@@ -3,7 +3,7 @@ import './Components.css'
 import PopupCard from './PopupCard';
 import {useState, useEffect} from 'react';
 
-function RestaurantCard({ restaurant }) {
+function RestaurantCard({ restaurant, onClick }) {
 
     let imageChoice = 'Default'
     switch(restaurant.cuisine){
@@ -38,8 +38,10 @@ function RestaurantCard({ restaurant }) {
     }
     
     return(
-        <div className="restaurantCard">
+        <div onClick={onClick} className="restaurantCard">
+
             <img class="cuisineImage" src={imageChoice} alt='Picture of food'/>
+
             <h3>Name:</h3>
             <p>{restaurant.restaurantName}</p>
             <h4>Address</h4>
@@ -56,12 +58,13 @@ function RestaurantCard({ restaurant }) {
             <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
             <h4>Average Rating</h4>
             <p>{restaurant.averageRating}</p>
+
             {/* <button onClick={() => onQuickView(restaurant.id)}>Review Page</button> */}
-            <PopupCard show={popupShown} handleClose={hidePopup}>
+            {/* <PopupCard show={popupShown} handleClose={hidePopup}>
             <p>Modal</p>
             </PopupCard>
-            <button onClick={showPopup}>Quick View</button>
-            <hr/>
+            <button onClick={showPopup}>Quick View</button> */}
+            {/* <hr/> */}
         </div>
     )
 }
