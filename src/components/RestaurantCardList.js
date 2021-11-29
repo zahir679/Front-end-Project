@@ -3,10 +3,10 @@ import RestaurantCard from './RestaurantCard'
 
 
 
-function RestaurantCardList({restaurants}) {
+function RestaurantCardList({restaurants, onQuickView}) {
     const listofRestaurants = restaurants.map(restaurant => {
     return (
-        <RestaurantCard restaurant = {restaurant} key = {restaurant.id}/>
+        <RestaurantCard restaurant = {restaurant} key = {restaurant.id} onQuickView = {onQuickView}/>
     )
 })
     return (

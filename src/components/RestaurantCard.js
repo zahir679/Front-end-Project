@@ -1,8 +1,8 @@
 import React from 'react'
 
-function RestaurantCard({restaurant}) {
+function RestaurantCard({restaurant, onQuickView}) {
     return(
-        <div className={restaurantCard}>
+        <div className="restaurantCard">
             <h3>Name:</h3>
             <p>{restaurant.restaurantName}</p>
             <h4>Address</h4>
@@ -19,8 +19,8 @@ function RestaurantCard({restaurant}) {
             <p>{restaurant.glutenfree}</p>
             <h4>averageRating</h4>
             <p>{restaurant.averageRating}</p>
-            <hr/>
             <button onClick={() => onQuickView(restaurant.id)}>Show in quick view</button>
+            <hr/>
         </div>
     )
 }
