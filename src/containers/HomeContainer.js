@@ -81,11 +81,15 @@ const HomeContainer = () => {
             <RestaurantCardList restaurants={restaurants} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
-            {shownRestaurant ? 
-            <PopupCard  restaurant ={shownRestaurant} show={popupShown} onClick={hidePopup} />
-            :
-            <p>oops! something went wrong, please message Zahir:  @zahir_a1</p>
-            }
+            
+            {/* below replaces ternary operator */}
+            {(() => {
+                if (shownRestaurant) {
+                    return (
+                        <PopupCard  restaurant ={shownRestaurant} show={popupShown} onClick={hidePopup} />
+                    )
+                }
+            })()}
         </>
     )
 
