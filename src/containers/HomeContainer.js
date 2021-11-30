@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './Containers.css';
+import './containers.css';
 
 import RestaurantCardList from '../components/RestaurantCardList';
 import PopupCard from '../components/PopupCard';
@@ -63,7 +63,7 @@ const HomeContainer = () => {
         <>
             {/* <NewRestaurantForm onRestuarantSubmission={addNewRestaurant}/> */}
             
-            <img class ='heroImage' src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
+            <img class ='heroImage' id="HeroImage" src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
             
             <RestaurantCardList restaurants={restaurants} onClick={showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
