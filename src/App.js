@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar';
@@ -8,16 +8,20 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
+  const [loggedIn, setLoggedIn] = useState(null);
+  const [loggedInCustomer, setLoggedInCustomer] = useState(null);
+
   return (
     <Router>
     <div className="App"> 
-    <NavBar/>
+    <NavBar loggedIn={loggedIn}/>
     <div className="content">
       <Switch>
         <Route path="/" exact>
         <HomeContainer/>
         </Route>
       
+
         <Route path="/LogIn">
           <LogIn />
         
