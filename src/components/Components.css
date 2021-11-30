@@ -15,6 +15,11 @@
 
 }
 
+.restaurantCard:hover{
+    transform: scale(1.01);
+    transition-delay: 0.1s ease-in;
+}
+
 .list{
     width: 80%;
     height: 100%;
@@ -70,5 +75,4 @@
   .navBar a:hover {
     transform: scale(1.5);
     transition-delay: 0.1s ease-in;
-    background-color: #dfb1d9;
   }
