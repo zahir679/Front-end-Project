@@ -12,12 +12,13 @@
     position:fixed;
     background: rgb(253, 230, 230);
     width: 80%;
-    height: auto;
+    height:70%;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    
-    
+    display: flex;
+    overflow: scroll;
+    justify-content: space-around;
   }
   
   .display-block {
