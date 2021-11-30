@@ -17,10 +17,12 @@ function App() {
         <Route path="/" exact>
         <HomeContainer/>
         </Route>
+      
         <Route path="/LogIn">
           <LogIn />
         
         </Route>
+       
         <Route path="/WishList">
 
         </Route>
