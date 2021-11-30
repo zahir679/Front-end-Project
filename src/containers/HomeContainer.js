@@ -4,6 +4,7 @@ import './Containers.css';
 
 import RestaurantCardList from '../components/RestaurantCardList';
 import PopupCard from '../components/PopupCard';
+import Filter from '../components/Filter'
 
 const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -77,7 +78,7 @@ const HomeContainer = () => {
             {/* <NewRestaurantForm onRestuarantSubmission={addNewRestaurant}/> */}
             
             <img class ='heroImage' id="HeroImage" src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
-            
+            <Filter/>
             <RestaurantCardList restaurants={restaurants} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
