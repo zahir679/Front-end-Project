@@ -3,7 +3,7 @@ import Form from './Form.js';
 const LogIn = () => {
  return(
  <div>
-        <Form/>
+     <Form/>
     </div>
  )
 }
