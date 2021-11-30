@@ -15,7 +15,7 @@ function RestaurantCard({ restaurant, onClick }) {
       case 'Chinese':imageChoice='https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000442/img/basic/a0000442_main.jpg?20170412180838&q=80&rw=750&rh=536'; break;
       case 'Indian':imageChoice='https://www.theshaftesbury.com/blog/wp-content/uploads/2017/08/Indian-takeaway-at-a-Londons-market.jpg'; break;
       case 'Hamburger':imageChoice='https://cdn.discordapp.com/attachments/913726718169194496/914897116453826620/unknown.png'; break;
-      case 'Italian':imageChoice='https://images.squarespace-cdn.com/content/v1/5e484ab628c78d6f7e602d73/1599248222831-ZMHAFYJT9T3IXH3IVGKY/What-to-eat-in-Italy.png'; break;
+      case 'Italian':imageChoice='https://media4.giphy.com/media/iuumSq0ElSFzDK75JF/giphy.gif'; break;
       case 'French':imageChoice='https://www.getflavor.com/wp-content/uploads/2019/01/4-Taureaux-Spread.jpg'; break;
   }
   
