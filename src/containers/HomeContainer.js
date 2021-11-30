@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './containers.css';
+import './Containers.css';
 
 import RestaurantCardList from '../components/RestaurantCardList';
 import PopupCard from '../components/PopupCard';
