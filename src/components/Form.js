@@ -5,21 +5,19 @@ const Form = ({ onLogIn }) => {
 
     const history = useHistory();
     const [email, setEmail] = useState("");
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:8080/customer")
-        .then(response => response.json())
-        .then(data => setUsers(data))
-    }, [])
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     }
 
-    const handleLogIn = (event) => {
+    const handleLogIn = async (event) => {
         event.preventDefault();
 
+        let users;
+        await fetch("http://localhost:8080/customer")
+        .then(response => response.json())
+        .then(data => users = data)
+        
         const userFound = users.find(user => user.email === email)
         if (userFound) {
             onLogIn();
