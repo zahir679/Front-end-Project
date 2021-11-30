@@ -1,7 +1,9 @@
 import { useState }from "react";
+import { useHistory } from "react-router";
 
 const Form = ({ onLogIn }) => {
 
+    const history = useHistory();
     const [email, setEmail] = useState("");
 
     const handleEmailChange = (event) => {
@@ -14,6 +16,8 @@ const Form = ({ onLogIn }) => {
         onLogIn();
 
         setEmail("");
+
+        history.push("/");
     }
 
     return(
