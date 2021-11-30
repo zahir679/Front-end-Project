@@ -1,10 +1,17 @@
-import { useState }from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
 const Form = ({ onLogIn }) => {
 
     const history = useHistory();
     const [email, setEmail] = useState("");
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/customer")
+        .then(response => response.json())
+        .then(data => setUsers(data))
+    }, [])
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -13,11 +20,15 @@ const Form = ({ onLogIn }) => {
     const handleLogIn = (event) => {
         event.preventDefault();
 
-        onLogIn();
+        const userFound = users.find(user => user.email === email)
+        if (userFound) {
+            onLogIn();
+            // setEmail("");
+            history.push("/");
+        } else {
+            setEmail("");
+        }
 
-        setEmail("");
-
-        history.push("/");
     }
 
     return(
