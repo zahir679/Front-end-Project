@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar';
@@ -6,10 +6,28 @@ import Footer from './components/Footer';
 import LogIn from './components/LogIn'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+function getSessionStorageOfDefault(key, defaultValue) {
+  const stored = sessionStorage.getItem(key)
+  if (!stored) {
+    return defaultValue;
+  }
+  return JSON.parse(stored)
+}
+
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(null);
-  const [loggedInCustomer, setLoggedInCustomer] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(
+    getSessionStorageOfDefault('loggedIn', false)
+  );
+  // const [loggedInCustomer, setLoggedInCustomer] = useState(null);
+
+  useEffect(() => {
+    sessionStorage.setItem('loggedIn', JSON.stringify(loggedIn))
+  }, [loggedIn])
+
+  const onLogIn = () => {
+    setLoggedIn(true);
+  }
 
   return (
     <Router>
@@ -23,7 +41,7 @@ function App() {
       
 
         <Route path="/LogIn">
-          <LogIn />
+          <LogIn onLogIn={onLogIn}/>
         
         </Route>
        
