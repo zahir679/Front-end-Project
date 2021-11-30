@@ -3,7 +3,8 @@ import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import LogIn from './components/LogIn'
+import LogIn from './components/LogIn';
+import Filter from './components/Filter';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
     <div className="App"> 
     <NavBar/>
     <div className="content">
+
+      
       <Switch>
         <Route path="/" exact>
         <HomeContainer/>
@@ -27,7 +30,10 @@ function App() {
 
         </Route>
       </Switch>
+      
+
       </div>
+      
       <div className="footer" id="Footer">
       <Footer/>
       </div>
