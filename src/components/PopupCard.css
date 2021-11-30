@@ -1,4 +1,4 @@
-.modal {
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,7 +7,7 @@
     background: rgba(56, 55, 55, 0.6);
   }
   
-  .modal-main {
+  .popup-main {
     position:fixed;
     background: rgb(253, 230, 230);
     width: 80%;

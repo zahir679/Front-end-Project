@@ -1,16 +1,24 @@
-import './popupCard.css'
+import './PopupCard.css'
 
 
-const PopupCard = ({ handleClose, show, children}) => {
-    const showHideClassName = show ? "modal display-block" : "modal display-none";
+const PopupCard = ({ onClick, show }) => {
+    const showHideClassName = show ? "popup display-block" : "popup display-none";
 
     return (
-      <div className={showHideClassName}>
-        <section className="modal-main">
-          {children}
-          <button type="button" onClick={handleClose}>
+      <div className={showHideClassName} onClick={onClick}>
+        <section className="popup-main">
+          <h2>Restaurant Popup</h2>
+          <p>Details</p>
+          <p>Reviews</p>
+
+
+
+
+
+          {/* <button type="button" onClick={handleClose}>
             Close
-          </button>
+          </button> */}
+
         </section>
       </div>
     );
