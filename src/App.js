@@ -29,10 +29,14 @@ function App() {
     setLoggedIn(true);
   }
 
+  const onLogOut = () => {
+    setLoggedIn(false);
+  }
+
   return (
     <Router>
     <div className="App"> 
-    <NavBar loggedIn={loggedIn}/>
+    <NavBar loggedIn={loggedIn} onLogOut={onLogOut}/>
     <div className="content">
       <Switch>
         <Route path="/" exact>

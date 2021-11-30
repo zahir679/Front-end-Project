@@ -1,14 +1,14 @@
 import React from 'react'
 import './Components.css'
 
-function NavBar({ loggedIn }) {
+function NavBar({ loggedIn, onLogOut }) {
     return (
         <div className="navBar">
             {/* <img class="logo" src="https://cdn.discordapp.com/attachments/913726718169194496/914897116453826620/unknown.png"/> */}
             <a href="/">Home</a>
 
             {loggedIn ?
-                <a href="/">Log Out</a>
+                <a href="/" onClick={onLogOut}>Log Out</a>
                 :
                 <a href="/LogIn">Log In</a>
             }
