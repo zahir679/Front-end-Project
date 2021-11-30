@@ -28,6 +28,7 @@ const PopupCard = ({ restaurant, onClick, show }) => {
           <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
           <h4>Average Rating</h4>
           <p>{restaurant.averageRating}</p>
+          <a href="/LeaveAReview">Leave a Review!</a>
           {/* {console.log(restaurant.reviews[0].comment)} */}
           
           <h4>reviews:</h4>

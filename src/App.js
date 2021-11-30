@@ -4,6 +4,7 @@ import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import LogIn from './components/LogIn'
+import ReviewForm from './components/ReviewForm';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
         
         </Route>
        
-        <Route path="/WishList">
+        <Route path="/LeaveAReview">
+          <ReviewForm />
+
 
         </Route>
       </Switch>
