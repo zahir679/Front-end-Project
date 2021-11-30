@@ -16,27 +16,27 @@ function getSessionStorageOfDefault(key, defaultValue) {
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(
-    getSessionStorageOfDefault('loggedIn', false)
+  const [loggedInUser, setLoggedInUser] = useState(
+    getSessionStorageOfDefault('loggedInUser', null)
   );
   // const [loggedInCustomer, setLoggedInCustomer] = useState(null);
 
   useEffect(() => {
-    sessionStorage.setItem('loggedIn', JSON.stringify(loggedIn))
-  }, [loggedIn])
+    sessionStorage.setItem('loggedIn', JSON.stringify(loggedInUser))
+  }, [loggedInUser])
 
-  const onLogIn = () => {
-    setLoggedIn(true);
+  const onLogIn = (user) => {
+    setLoggedInUser(user);
   }
 
   const onLogOut = () => {
-    setLoggedIn(false);
+    setLoggedInUser(null);
   }
 
   return (
     <Router>
     <div className="App"> 
-    <NavBar loggedIn={loggedIn} onLogOut={onLogOut}/>
+    <NavBar loggedInUser={loggedInUser} onLogOut={onLogOut}/>
     <div className="content">
       <Switch>
         <Route path="/" exact>

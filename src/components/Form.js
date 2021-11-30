@@ -20,7 +20,7 @@ const Form = ({ onLogIn }) => {
         
         const userFound = users.find(user => user.email === email)
         if (userFound) {
-            onLogIn();
+            onLogIn(userFound);
             // setEmail("");
             history.push("/");
         } else {
