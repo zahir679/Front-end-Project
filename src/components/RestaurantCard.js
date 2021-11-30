@@ -20,7 +20,7 @@ function RestaurantCard({ restaurant, onClick }) {
   }
   
   return(
-      <div onClick={onClick} className="restaurantCard">
+      <div onClick={()=>onClick(restaurant.id)} className="restaurantCard">
 
           <img class="cuisineImage" src={imageChoice} alt='Picture of food'/>
 

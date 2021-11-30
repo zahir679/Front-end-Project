@@ -8,6 +8,7 @@ import PopupCard from '../components/PopupCard';
 const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [popupShown, setPopupShown] = useState(null);
+    const [shownRestaurant,setShownRestaurant] = useState(null);
 
     const getRestaurantData = () => {
         fetch("http://localhost:8080/restaurant/allRestaurants")
@@ -22,7 +23,14 @@ const HomeContainer = () => {
 
     // || ========= Popup Methods ========== ||
 
-    const showPopup = () => {
+    const selectRestaurant = (id)=>{
+        const newList = [...restaurants]
+        const restaurantToShow = newList.find(restaurant => restaurant.id === id);
+        setShownRestaurant(restaurantToShow)
+    }
+
+    const showPopup = (id) => {
+        selectRestaurant(id)
         setPopupShown(true)
       }
     
@@ -31,6 +39,11 @@ const HomeContainer = () => {
       }
 
     // || ========= ============= ========== ||
+
+
+    
+
+        //===================||
 
     const addNewRestaurant = (newRestaurant) => {
         fetch("http://localhost:8080/restaurant", {
@@ -65,14 +78,17 @@ const HomeContainer = () => {
             
             <img class ='heroImage' id="HeroImage" src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
             
-            <RestaurantCardList restaurants={restaurants} onClick={showPopup}
+            <RestaurantCardList restaurants={restaurants} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
-
-            <PopupCard show={popupShown} onClick={hidePopup} />
+            {shownRestaurant ? 
+            <PopupCard  restaurant ={shownRestaurant} show={popupShown} onClick={hidePopup} />
+            :
+            <p>oops! something went wrong, please message Zahir:  @zahir_a1</p>
+            }
         </>
     )
 
 }
 
-export default HomeContainer
+export default HomeContainer;
