@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import Filter from './components/Filter';
-import LogIn from './components/LogIn'
+import NavBar from './components/SiteComponents/NavBar';
+import Footer from './components/SiteComponents/Footer';
+import Filter from './components/SiteComponents/Filter';
+import LogIn from './components/LogInContent/LogIn'
 import ReviewContainer from './containers/ReviewContainer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 

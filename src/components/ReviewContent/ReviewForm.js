@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
-import './Components.css'
+import '../Components.css'
 
 
 

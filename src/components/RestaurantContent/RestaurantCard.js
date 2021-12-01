@@ -1,5 +1,5 @@
 import React from 'react'
-import './Components.css'
+import '../Components.css'
 
 function RestaurantCard({ restaurant, onClick }) {
 
@@ -31,7 +31,7 @@ function RestaurantCard({ restaurant, onClick }) {
           <h4>Cuisine:</h4>
           <p>{restaurant.cuisine}</p>
           <h4>Price:</h4>
-          <p>{restaurant.price}</p>
+          <p>{restaurant.price}/5</p>
           <h4>Vegetarian:</h4>
           <p>{restaurant.vegetarian ? "Yes" : "No"}</p>
           <h4>Halal:</h4>
