@@ -40,7 +40,9 @@ const ReviewForm = () =>{
           <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
     </div>
-    <p>Leave an explanantion:</p><input type="text"/>
+
+
+    <p>Leave an explanation:</p><input type="text"/>
     </div>
     )
 }

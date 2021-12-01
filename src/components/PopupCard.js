@@ -25,7 +25,7 @@ const PopupCard = ({ restaurant, onClick, show }) => {
           <h4>Halal?</h4>
           <p>{restaurant.halal ? "Yes" : "No"}</p>
           <h4>Gluten free?</h4>
-          <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
+          <p>{restaurant.glutenFree ? "Yes" : "No"}</p>
           {/* {console.log(restaurant.reviews[0].comment)} */}
           
           <h4>reviews:</h4>
