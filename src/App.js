@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Filter from './components/Filter';
 import LogIn from './components/LogIn'
-import ReviewForm from './components/ReviewForm';
+import ReviewContainer from './containers/ReviewContainer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function getSessionStorageOfDefault(key, defaultValue) {
@@ -54,9 +54,7 @@ function App() {
         </Route>
        
         <Route path="/LeaveAReview">
-          <ReviewForm />
-
-
+          <ReviewContainer/>
         </Route>
       </Switch>
       
