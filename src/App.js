@@ -22,7 +22,7 @@ function App() {
   // const [loggedInCustomer, setLoggedInCustomer] = useState(null);
 
   useEffect(() => {
-    sessionStorage.setItem('loggedIn', JSON.stringify(loggedInUser))
+    sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
   }, [loggedInUser])
 
   const onLogIn = (user) => {
