@@ -4,8 +4,9 @@ import './Containers.css';
 
 import RestaurantCardList from '../components/RestaurantCardList';
 import PopupCard from '../components/PopupCard';
-import Filter from '../components/Filter';
-
+import Filter from '../components/Filter'
+import { Checkbox } from '@mui/material';
+import CheckBox from '../components/CheckBox';
 
 const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -73,13 +74,20 @@ const HomeContainer = () => {
         .then(getRestaurantData);
     }
 
+    const handleFilters = () => {
+
+    }
+
 
     return(
         <>
             {/* <NewRestaurantForm onRestuarantSubmission={addNewRestaurant}/> */}
             
             <img class ='heroImage' id="HeroImage" src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
-            <Filter/>
+            {/* <Filter/> */}
+            <CheckBox/>
+            {/* <CheckBox handleFilters ={(filters => handleFilters(filters, "dietFilters"))} /> */}
+
             <RestaurantCardList restaurants={restaurants} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
