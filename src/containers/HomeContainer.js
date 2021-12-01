@@ -11,7 +11,20 @@ const HomeContainer = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [popupShown, setPopupShown] = useState(null);
     const [shownRestaurant,setShownRestaurant] = useState(null);
+    const [halal, setHalal] = useState(false);
+    const [vegetarian, setVegetarian] = useState(false);
+    const [glutenFree, setGlutenFree] = useState(false);
 
+
+    const updateHalalFilter = () => {
+        setHalal(!halal)
+    }
+    const updateVegetarianFilter = () => {
+        setVegetarian(!vegetarian) 
+    }
+    const updateGlutenFreeFilter = () => {
+        setGlutenFree(!glutenFree)
+    }
     const getRestaurantData = () => {
         fetch("http://localhost:8080/restaurant/allRestaurants")
             .then(response => response.json())
@@ -73,14 +86,55 @@ const HomeContainer = () => {
         .then(getRestaurantData);
     }
 
-
+    const filterRestaurants = () => {
+        if (halal && vegetarian && glutenFree){
+            return restaurants.filter(restaurant => {
+                return restaurant.halal && restaurant.vegetarian && restaurant.glutenFree
+            })
+        }
+        else if (halal && vegetarian){
+            return restaurants.filter(restaurant => {
+                return restaurant.halal && restaurant.vegetarian
+            })
+        }
+        else if (glutenFree && vegetarian){
+            return restaurants.filter(restaurant => {
+                return restaurant.glutenFree && restaurant.vegetarian
+            })
+        }
+        else if (glutenFree && halal){
+            return restaurants.filter(restaurant => {
+                return restaurant.glutenFree && restaurant.halal
+            })
+        }
+        else if (glutenFree){
+            return restaurants.filter(restaurant => {
+                return restaurant.glutenFree
+            })
+        }
+        else if  (halal){
+            return restaurants.filter(restaurant => {
+                return restaurant.halal
+            })
+        }
+        else if (vegetarian){
+            return restaurants.filter(restaurant => {
+                return restaurant.vegetarian
+            })
+        }
+    
+    
+        return restaurants
+    }
     return(
         <>
             {/* <NewRestaurantForm onRestuarantSubmission={addNewRestaurant}/> */}
             
             <img class ='heroImage' id="HeroImage" src='https://media.discordapp.net/attachments/913726718169194496/914889207376404530/Logo3.png'/>
-            <Filter/>
-            <RestaurantCardList restaurants={restaurants} onClick={selectRestaurant,showPopup}
+            <Filter updateHalalFilter = {updateHalalFilter} halal = {halal} updateVegetarianFilter = {updateVegetarianFilter}
+            vegetarian = {vegetarian} updateGlutenFreeFilter = {updateGlutenFreeFilter} glutenFree ={glutenFree} />
+
+            <RestaurantCardList restaurants={filterRestaurants()} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
             <hr/>
             
