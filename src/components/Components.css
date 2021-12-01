@@ -9,10 +9,15 @@
     -webkit-backdrop-filter: blur( 7px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    
-    
 
+}
 
+.filter{
+  color:white;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .restaurantCard:hover{
@@ -38,6 +43,7 @@
     position: fixed;
     display: flex;
     justify-content: space-around;
+    
     
 }
 
