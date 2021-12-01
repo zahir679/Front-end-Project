@@ -3,12 +3,12 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function CheckboxLabels({updateHalalFilter}) {
+export default function CheckboxLabels({updateHalalFilter, updateGlutenFreeFilter, updateVegetarianFilter}) {
   return (
     <FormGroup>
       <FormControlLabel control={<Checkbox />} onChange={updateHalalFilter} label="Halal" />
-      <FormControlLabel control={<Checkbox />} label="Vegetarian" />
-      <FormControlLabel control={<Checkbox />} label="Gluten Free" />
+      <FormControlLabel control={<Checkbox />} onChange={updateVegetarianFilter} label="Vegetarian" />
+      <FormControlLabel control={<Checkbox />} onChange={updateGlutenFreeFilter} label="Gluten Free" />
     </FormGroup>
   );
 
