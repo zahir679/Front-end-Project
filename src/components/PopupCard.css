@@ -25,6 +25,23 @@
     border-radius: 10px;
     border: 1px solid rgba(92, 45, 1, 0.18);
   }
+  .btn {
+    -webkit-border-radius: 9;
+    -moz-border-radius: 9;
+    border-radius: 9px;
+    font-family: Arial;
+    color: black;
+    background: none;
+    font-size: 23px;
+    padding: 6px 12px 6px 12px;
+    border: solid black 3px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background:#ff781f;
+    text-decoration: none;
+  }
   
   .display-block {
     display: block;

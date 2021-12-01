@@ -9,10 +9,10 @@
     -webkit-backdrop-filter: blur( 7px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );*/
-    border-radius: 50px;
-    background: #ff781f;
-    box-shadow:  20px 20px 60px #d9661a,
-                 -20px -20px 60px #ff8a24;
+    border-radius: 0px;
+background: #ff781f;
+box-shadow:  10px 10px 20px #d9661a,
+             -10px -10px 20px #ff8a24;
 
 }
 
