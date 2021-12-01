@@ -38,8 +38,6 @@ function RestaurantCard({ restaurant, onClick }) {
           <p>{restaurant.halal ? "Yes" : "No"}</p>
           <h4>Gluten free?</h4>
           <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
-          <h4>Average Rating</h4>
-          <p>{restaurant.averageRating}</p>
 
           {/* <button onClick={() => onQuickView(restaurant.id)}>Review Page</button> */}
           {/* <hr/> */}
