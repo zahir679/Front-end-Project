@@ -4,14 +4,14 @@ import RestaurantCard from './RestaurantCard'
 
 
 function RestaurantCardList({ restaurants, onClick }) {
-    const listofRestaurants = restaurants.map(restaurant => {
+    const listOfRestaurants = restaurants.map(restaurant => {
     return (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} onClick={onClick}/>
     )
 })
     return (
         <div className = "list">
-            {listofRestaurants} 
+            {listOfRestaurants} 
         </div>
     )
 

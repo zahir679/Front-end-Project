@@ -8,7 +8,7 @@ function NavBar({ loggedInUser, onLogOut }) {
             {loggedInUser ?
             <p>Hello {loggedInUser.name}!</p>
             :
-            <p>AverageConneisseurs</p>}
+            <p>AverageConnoisseurs</p>}
             {/* <img class="logo" src="https://cdn.discordapp.com/attachments/913726718169194496/914897116453826620/unknown.png"/> */}
 
             
@@ -19,6 +19,8 @@ function NavBar({ loggedInUser, onLogOut }) {
                 :
                 <a href="/LogIn">Log In</a>
             }
+
+            <a href="/LeaveAReview">Leave a Review!</a>
             
             <a href="https://www.google.com/">Wish List</a>
             <a href="#Footer">Contact Us</a>

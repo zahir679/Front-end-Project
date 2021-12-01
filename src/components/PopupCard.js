@@ -14,18 +14,18 @@ const PopupCard = ({ restaurant, onClick, show }) => {
           <div>
           <h3>Name:</h3>
           <p>{restaurant.restaurantName}</p>
-          <h4>Address</h4>
+          <h4>Address:</h4>
           <p>{restaurant.address}</p>
-          <h4>Cuisine</h4>
+          <h4>Cuisine:</h4>
           <p>{restaurant.cuisine}</p>
-          <h4>Price</h4>
+          <h4>Price:</h4>
           <p>{restaurant.price}</p>
-          <h4>Vegetarian?</h4>
+          <h4>Vegetarian:</h4>
           <p>{restaurant.vegetarian ? "Yes" : "No"}</p>
-          <h4>Halal?</h4>
+          <h4>Halal:</h4>
           <p>{restaurant.halal ? "Yes" : "No"}</p>
-          <h4>Gluten free?</h4>
-          <p>{restaurant.glutenfree ? "Yes" : "No"}</p>
+          <h4>Gluten free:</h4>
+          <p>{restaurant.glutenFree ? "Yes" : "No"}</p>
           {/* {console.log(restaurant.reviews[0].comment)} */}
           
           <h4>reviews:</h4>
