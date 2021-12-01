@@ -10,7 +10,6 @@
   
   .popup-main {
     position:fixed;
-    background: rgb(253, 230, 230);
     width: 80%;
     height:70%;
     top:50%;
@@ -19,6 +18,12 @@
     display: flex;
     overflow: scroll;
     justify-content: space-around;
+    background: rgba(245, 221, 184, 0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba(92, 45, 1, 0.18);
   }
   
   .display-block {
