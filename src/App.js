@@ -3,10 +3,14 @@ import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/SiteComponents/NavBar';
 import Footer from './components/SiteComponents/Footer';
-import Filter from './components/SiteComponents/Filter';
 import LogIn from './components/LogInContent/LogIn'
-import ReviewContainer from './containers/ReviewContainer';
+import ReviewForm from './components/ReviewContent/ReviewForm';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+import SwitchButton from "./Button";
+
 
 function getSessionStorageOfDefault(key, defaultValue) {
   const stored = sessionStorage.getItem(key)
@@ -17,6 +21,8 @@ function getSessionStorageOfDefault(key, defaultValue) {
 }
 
 function App() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [loggedInUser, setLoggedInUser] = useState(
     getSessionStorageOfDefault('loggedInUser', null)
@@ -36,6 +42,7 @@ function App() {
   }
 
   return (
+<div className={`bg ${darkMode ? "bg-dark" : "bg-light"}`}>
     <Router>
     <div className="App"> 
     <NavBar loggedInUser={loggedInUser} onLogOut={onLogOut}/>
@@ -54,7 +61,9 @@ function App() {
         </Route>
        
         <Route path="/LeaveAReview">
-          <ReviewContainer/>
+          <ReviewForm />
+
+
         </Route>
       </Switch>
       
@@ -66,7 +75,8 @@ function App() {
       </div>
       </div>
       </Router>
-
+      <SwitchButton />
+</div>
 
   );
   

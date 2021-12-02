@@ -24,20 +24,20 @@ function RestaurantCard({ restaurant, onClick }) {
 
           <img class="cuisineImage" src={imageChoice} alt='Picture of food'/>
 
-          <h3>Name:</h3>
-          <p>{restaurant.restaurantName}</p>
+          <h4>Name:</h4>
+          <h4>{restaurant.restaurantName}</h4>
           <h4>Address:</h4>
-          <p>{restaurant.address}</p>
+          <h4>{restaurant.address}</h4>
           <h4>Cuisine:</h4>
-          <p>{restaurant.cuisine}</p>
+          <h4>{restaurant.cuisine}</h4>
           <h4>Price:</h4>
-          <p>{restaurant.price}/5</p>
+          <h4>{restaurant.price}</h4>
           <h4>Vegetarian:</h4>
-          <p>{restaurant.vegetarian ? "Yes" : "No"}</p>
+          <h4>{restaurant.vegetarian ? "Yes" : "No"}</h4>
           <h4>Halal:</h4>
-          <p>{restaurant.halal ? "Yes" : "No"}</p>
+          <h4>{restaurant.halal ? "Yes" : "No"}</h4>
           <h4>Gluten free?</h4>
-          <p>{restaurant.glutenFree ? "Yes" : "No"}</p>
+          <h4>{restaurant.glutenFree ? "Yes" : "No"}</h4>
 
           {/* <button onClick={() => onQuickView(restaurant.id)}>Review Page</button> */}
           {/* <hr/> */}
