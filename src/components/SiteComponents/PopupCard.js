@@ -1,6 +1,8 @@
-import './PopupCard.css'
-import ReviewCardList from './ReviewCardList';
-
+import '../Components.css'
+import ReviewCardList from '../ReviewContent/ReviewCardList';
+import Rating from '@mui/material/Rating';
+import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
+import { green } from '@mui/material/colors';
 
 const PopupCard = ({ restaurant, onClick, show }) => {
     const showHideClassName = show ? "popup display-block" : "popup display-none";
@@ -19,7 +21,7 @@ const PopupCard = ({ restaurant, onClick, show }) => {
           <h4>Cuisine:</h4>
           <p>{restaurant.cuisine}</p>
           <h4>Price:</h4>
-          <p>{restaurant.price}</p>
+          <p>{<Rating icon={ <CurrencyPoundIcon style={{fill: "green"}}/>} emptyIcon={<CurrencyPoundIcon/>} value={restaurant.price} precision={0.5}  readOnly />}</p>
           <h4>Vegetarian:</h4>
           <p>{restaurant.vegetarian ? "Yes" : "No"}</p>
           <h4>Halal:</h4>
@@ -28,7 +30,7 @@ const PopupCard = ({ restaurant, onClick, show }) => {
           <p>{restaurant.glutenFree ? "Yes" : "No"}</p>
           {/* {console.log(restaurant.reviews[0].comment)} */}
           
-          <h4>reviews:</h4>
+          <h4>Reviews:</h4>
           <ReviewCardList reviews={restaurant.reviews} />
           <b><a href="/LeaveAReview">Leave a Review!</a></b>
 

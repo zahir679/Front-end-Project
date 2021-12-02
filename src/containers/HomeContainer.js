@@ -2,9 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './Containers.css';
 
-import RestaurantCardList from '../components/RestaurantCardList';
-import PopupCard from '../components/PopupCard';
-import Filter from '../components/Filter';
+import RestaurantCardList from '../components/RestaurantContent/RestaurantCardList';
+import PopupCard from '../components/SiteComponents/PopupCard';
+import Filter from '../components/SiteComponents/Filter';
 
 
 const HomeContainer = () => {
@@ -137,7 +137,7 @@ const HomeContainer = () => {
 
             <RestaurantCardList restaurants={filterRestaurants()} onClick={selectRestaurant,showPopup}
                 onRestaurantCompletion={updateRestaurantCompletion}/>
-                
+
             <hr/>
             
             {/* below replaces ternary operator */}

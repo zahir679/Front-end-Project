@@ -1,4 +1,4 @@
-import ReviewForm from '../components/ReviewForm'
+import ReviewForm from '../components/ReviewContent/ReviewForm'
 import {useState, useEffect} from 'react';
 
 
