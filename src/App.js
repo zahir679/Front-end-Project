@@ -3,9 +3,8 @@ import './App.css';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/SiteComponents/NavBar';
 import Footer from './components/SiteComponents/Footer';
-import Filter from './components/SiteComponents/Filter';
 import LogIn from './components/LogInContent/LogIn'
-import ReviewContainer from './containers/ReviewContainer';
+import ReviewForm from './components/ReviewContent/ReviewForm';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import React, { useContext } from "react";
@@ -62,7 +61,9 @@ function App() {
         </Route>
        
         <Route path="/LeaveAReview">
-          <ReviewContainer/>
+          <ReviewForm />
+
+
         </Route>
       </Switch>
       
