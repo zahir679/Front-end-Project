@@ -15,7 +15,25 @@ const ReviewContainer = () => {
 
     useEffect(() => {
         getRestaurantData();
-    });
+    },[]);
+
+    const reviewSubmit =(review) => {
+        fetch("http://localhost:8080/review", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(getRestaurantData);
+        
+    }
+
+
+    //Get customer ID from props to put in body of post request
+
+    
+
 
 
     const selectRestaurants = ()=>{
@@ -29,7 +47,7 @@ const ReviewContainer = () => {
 
 
         return(
-        <ReviewForm restaurants={restaurants} />
+        <ReviewForm restaurants={restaurants} reviewSubmit={reviewSubmit} />
         )
     }
 

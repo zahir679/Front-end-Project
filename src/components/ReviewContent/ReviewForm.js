@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
@@ -13,21 +13,50 @@ const labels = {
   4: 'Very Good',
   5: 'Incredible',
 };
-const ReviewForm = ({restaurants}) =>{
 
-  const [value, setValue] = useState(2);
+const ReviewForm = ({restaurants , reviewSubmit }) =>{
+
+  const updateComment= (event) => {
+    setComment(event.target.value);
+  }
+
+  const updateDrop= (event) => {
+    setDropSelect(event.target.value);
+  }
+
+  const [value, setValue] = useState(3);
   const [hover, setHover] = useState(-1);
- 
+  const [dropSelect, setDropSelect]=useState(null);
+  const [comment,setComment] = useState("");
 
+    const onReviewSubmit= (event)=>{
+      event.preventDefault();
+
+      const review = 
+        {
+          restaurant_ID: dropSelect,
+          customer_ID:1,
+          rating:value,
+          comment:comment
+        }
+
+        reviewSubmit(review);
+
+      }
+
+    
     return(
-    <form >
+
+    <form onSubmit={onReviewSubmit}>
     <div className="reviewPageForm"> 
     <h2>Thanks for visiting, please leave a review for the selected Restaurant using the slider and comment field below!</h2>
-    <select>
+
+    <select onChange={updateDrop}>
       {restaurants.map(restaurant =>(
-        <option  value={restaurant.id} label={restaurant.restaurantName}> </option>)
+        <option  value={restaurant.id} label={restaurant.restaurantName} > </option>)
       )}
     </select>
+
     <div className="slider">
 
      {/* ============================================== Rating mui stuff */}
@@ -56,7 +85,7 @@ const ReviewForm = ({restaurants}) =>{
         {/* ====================================================== */}
         </div>
 
-    <p>Leave a Comment:</p><input type="text"/>
+    <p>Leave a Comment:</p><input type="text" onChange={updateComment}/>
     <input type="submit" value="submit" />
     </div>
     </form>
